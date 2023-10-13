@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, StatusBar, SafeAreaView } from 'react-native';
+import { StyleSheet, StatusBar, SafeAreaView, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import StackNavigator from '@src/navigation/StackNavigator';
 import { colors } from '@src/global/colors';
 
 const styles = StyleSheet.create({
-  container: {
+  saveArea: {
     flex: 1,
     backgroundColor: colors.blackSecondary,
   },
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.saveArea}>
       <NavigationContainer>
         <StackNavigator />
         <StatusBar barStyle="light-content" />

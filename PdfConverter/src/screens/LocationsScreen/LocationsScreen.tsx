@@ -1,19 +1,21 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
- 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-});
- 
+import { View } from 'react-native';
+import LetterL from '@assets/images/letterL.svg';
+import { MainContainer } from '@src/components/MainContainer/MainContainer';
+import LocationItem from '@src/components/LocationItem/LocationItem';
+import { locationItems } from './constants';
+import { styles } from './styles';
+
 const LocationsScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text>LocationsScreen</Text>
-    </View>
+    <MainContainer firstHeaderLetter={<LetterL />} headerText="ocations">
+      <View style={styles.itemsContainer}>
+        {locationItems.map(item => (
+          <LocationItem {...item} />
+        ))}
+      </View>
+    </MainContainer>
   );
-}
+};
 
- 
 export default LocationsScreen;

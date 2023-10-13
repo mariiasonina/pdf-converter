@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
   tabBar: {
     backgroundColor: colors.blackSecondary,
     borderTopWidth: 0,
+    height: 50,
   },
   stackHeader: {
     backgroundColor: colors.blackSecondary,

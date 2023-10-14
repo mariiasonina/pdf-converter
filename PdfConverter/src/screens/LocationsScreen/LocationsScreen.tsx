@@ -8,7 +8,7 @@ import { styles } from './styles';
 
 const LocationsScreen = () => {
   return (
-    <MainContainer firstHeaderLetter={<LetterL />} headerText="ocations">
+    <MainContainer firstHeaderLetter={<LetterL />} headerText="ocations" padding>
       <View style={styles.itemsContainer}>
         {locationItems.map(item => (
           <LocationItem {...item} />

@@ -6,11 +6,12 @@ type Props = PropsWithChildren<{
   contentStyle?: StyleProp<ViewStyle>;
   firstHeaderLetter: React.ReactElement;
   headerText: string;
+  padding?: boolean;
 }>;
 
-export const MainContainer = ({ children, contentStyle, firstHeaderLetter, headerText }: Props) => {
+export const MainContainer = ({ children, contentStyle, firstHeaderLetter, headerText, padding }: Props) => {
   return (
-    <View style={[styles.container, contentStyle]}>
+    <View style={[styles.container, padding && { paddingHorizontal: 20 }]}>
       <View style={styles.header}>
         {firstHeaderLetter}
         <Text style={styles.headerText}>{headerText}</Text>

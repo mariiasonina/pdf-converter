@@ -6,12 +6,6 @@ export const styles = StyleSheet.create({
     width: 35,
     height: 50,
   },
-  divider: {
-    width: 3,
-    height: 3,
-    borderRadius: 1.5,
-    backgroundColor: colors.grey,
-  },
   infoContainer: {
     gap: 8,
     flexDirection: 'row',

@@ -4,6 +4,7 @@ import Dots from '@assets/icons/dots.svg';
 import SheetsIcon from '@assets/icons/sheetsIcon.svg';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { RootStackParamList } from '@src/navigation/StackNavigator';
+import { sharedStyles } from '@src/global/sharedStyles';
 import { styles } from './styles';
 
 type Props = {
@@ -20,7 +21,7 @@ export const FileItem = ({ name, type, date, size, pagesNumber }: Props) => {
   const onPressItem = () => {};
 
   const onPressSettings = () => {
-    navigation.navigate('FileSettings');
+    navigation.navigate('FileSettings', { name, type, date });
   };
 
   return (
@@ -36,9 +37,9 @@ export const FileItem = ({ name, type, date, size, pagesNumber }: Props) => {
         </Text>
         <View style={styles.infoContainer}>
           <Text style={styles.text}>{type}</Text>
-          <View style={styles.divider} />
+          <View style={sharedStyles.divider} />
           <Text style={styles.text}>{date}</Text>
-          <View style={styles.divider} />
+          <View style={sharedStyles.divider} />
           <Text style={styles.text}>{size}</Text>
         </View>
         <View style={styles.infoContainer}>

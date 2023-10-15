@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, StatusBar, SafeAreaView, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import StackNavigator from '@src/navigation/StackNavigator';
 import { colors } from '@src/global/colors';
+import TabNavigator from "@src/navigation/TabNavigator";
 
 const styles = StyleSheet.create({
   saveArea: {
@@ -15,7 +15,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.saveArea}>
       <NavigationContainer>
-        <StackNavigator />
+        <TabNavigator />
         <StatusBar barStyle="light-content" />
       </NavigationContainer>
     </SafeAreaView>

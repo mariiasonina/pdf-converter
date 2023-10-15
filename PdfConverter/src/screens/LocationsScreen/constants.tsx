@@ -4,9 +4,19 @@ import CameraIcon from '@assets/icons/cameraIcon.svg';
 import LinkIcon from '@assets/icons/linkIcon.svg';
 import OtherAppIcon from '@assets/icons/otherAppIcon.svg';
 import { colors } from '@src/global/colors';
+import { NavigationProp } from '@react-navigation/native';
+import { RootStackParamList } from '@src/navigation/StackNavigator';
 
-export const locationItems = [
-  { key: 0, icon: <GalleryIcon />, name: 'gallery', color: colors.white, onPress: () => {} },
+export const locationItems = (navigation: NavigationProp<RootStackParamList>) => [
+  {
+    key: 0,
+    icon: <GalleryIcon />,
+    name: 'gallery',
+    color: colors.white,
+    onPress: () => {
+      navigation.navigate('Convert');
+    },
+  },
   { key: 1, icon: <FilesIcon />, name: 'files', color: colors.blue, onPress: () => {} },
   { key: 2, icon: <CameraIcon />, name: 'camera', color: colors.red, onPress: () => {} },
   { key: 3, icon: <LinkIcon />, name: 'URL link', color: colors.yellow, onPress: () => {} },

@@ -9,8 +9,12 @@ export const styles = StyleSheet.create({
   },
   stackHeader: {
     backgroundColor: colors.blackSecondary,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
   },
-  stackHeaderStyle: {},
+  stackHeaderTitleStyle: {
+    fontFamily: 'Manrope',
+    fontSize: 22,
+    fontWeight: '700',
+    textTransform: 'capitalize',
+    color: colors.grey,
+  },
 });

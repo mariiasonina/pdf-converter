@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* PdfConverterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PdfConverterTests.m */; };
+		02690490C01D41429F12526E /* Manrope Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B908C84A7AC4045A2D3E7BE /* Manrope Bold.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-PdfConverter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-PdfConverter.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		24A3D8EE3E404E8990ACB72F /* Poppins Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20D62FB0E4E54F95A2BC212B /* Poppins Bold.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-PdfConverter-PdfConverterTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-PdfConverter-PdfConverterTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		02690490C01D41429F12526E /* Manrope Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4B908C84A7AC4045A2D3E7BE /* Manrope Bold.ttf */; };
 		BA356D4DC12D4101AFBAB244 /* Manrope.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9225EEAAA02B477B9BED1374 /* Manrope.ttf */; };
-		24A3D8EE3E404E8990ACB72F /* Poppins Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20D62FB0E4E54F95A2BC212B /* Poppins Bold.ttf */; };
 		DF4FF2EAABD446739FFA7306 /* Poppins Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BFD378D25F7438F87DF652B /* Poppins Regular.ttf */; };
 /* End PBXBuildFile section */
 
@@ -41,17 +41,17 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PdfConverter/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PdfConverter/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-PdfConverter-PdfConverterTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PdfConverter-PdfConverterTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20D62FB0E4E54F95A2BC212B /* Poppins Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins Bold.ttf"; path = "../src/assets/fonts/Poppins Bold.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-PdfConverter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PdfConverter.debug.xcconfig"; path = "Target Support Files/Pods-PdfConverter/Pods-PdfConverter.debug.xcconfig"; sourceTree = "<group>"; };
+		4B908C84A7AC4045A2D3E7BE /* Manrope Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Manrope Bold.ttf"; path = "../src/assets/fonts/Manrope Bold.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-PdfConverter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PdfConverter.release.xcconfig"; path = "Target Support Files/Pods-PdfConverter/Pods-PdfConverter.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-PdfConverter-PdfConverterTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PdfConverter-PdfConverterTests.debug.xcconfig"; path = "Target Support Files/Pods-PdfConverter-PdfConverterTests/Pods-PdfConverter-PdfConverterTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-PdfConverter.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PdfConverter.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PdfConverter/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-PdfConverter-PdfConverterTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PdfConverter-PdfConverterTests.release.xcconfig"; path = "Target Support Files/Pods-PdfConverter-PdfConverterTests/Pods-PdfConverter-PdfConverterTests.release.xcconfig"; sourceTree = "<group>"; };
+		8BFD378D25F7438F87DF652B /* Poppins Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins Regular.ttf"; path = "../src/assets/fonts/Poppins Regular.ttf"; sourceTree = "<group>"; };
+		9225EEAAA02B477B9BED1374 /* Manrope.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Manrope.ttf; path = ../src/assets/fonts/Manrope.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		4B908C84A7AC4045A2D3E7BE /* Manrope Bold.ttf */ = {isa = PBXFileReference; name = "Manrope Bold.ttf"; path = "../src/assets/fonts/Manrope Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9225EEAAA02B477B9BED1374 /* Manrope.ttf */ = {isa = PBXFileReference; name = "Manrope.ttf"; path = "../src/assets/fonts/Manrope.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		20D62FB0E4E54F95A2BC212B /* Poppins Bold.ttf */ = {isa = PBXFileReference; name = "Poppins Bold.ttf"; path = "../src/assets/fonts/Poppins Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8BFD378D25F7438F87DF652B /* Poppins Regular.ttf */ = {isa = PBXFileReference; name = "Poppins Regular.ttf"; path = "../src/assets/fonts/Poppins Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +114,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6BDA41D19F704B03B7961D76 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4B908C84A7AC4045A2D3E7BE /* Manrope Bold.ttf */,
+				9225EEAAA02B477B9BED1374 /* Manrope.ttf */,
+				20D62FB0E4E54F95A2BC212B /* Poppins Bold.ttf */,
+				8BFD378D25F7438F87DF652B /* Poppins Regular.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,18 +168,6 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
-		};
-		6BDA41D19F704B03B7961D76 /* Resources */ = {
-			isa = "PBXGroup";
-			children = (
-				4B908C84A7AC4045A2D3E7BE /* Manrope Bold.ttf */,
-				9225EEAAA02B477B9BED1374 /* Manrope.ttf */,
-				20D62FB0E4E54F95A2BC212B /* Poppins Bold.ttf */,
-				8BFD378D25F7438F87DF652B /* Poppins Regular.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 

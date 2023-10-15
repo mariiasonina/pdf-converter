@@ -2,11 +2,11 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ConvertIcon from '@assets/icons/tabConvertIcon.svg';
 import HistoryIcon from '@assets/icons/tabHistoryIcon.svg';
 import SettingsIcon from '@assets/icons/tabSettingsIcon.svg';
-import LocationsScreen from '@screens/LocationsScreen/LocationsScreen';
 import HistoryScreen from '@screens/HistoryScreen/HistoryScreen';
 import SettingsScreen from '@screens/SettingsScreen/SettingsScreen';
-import { styles } from './styles';
 import { colors } from '@src/global/colors';
+import StackNavigator from './StackNavigator';
+import { styles } from './styles';
 
 export type TabParamList = {
   Locations: undefined;
@@ -19,29 +19,31 @@ const Tab = createBottomTabNavigator();
 const TabNavigator = () => {
   return (
     <Tab.Navigator
+      initialRouteName="LocationsTab"
       screenOptions={{
         tabBarStyle: styles.tabBar,
         headerShown: false,
         tabBarShowLabel: false,
+        tabBarActiveTintColor: colors.blue,
+        tabBarInactiveTintColor: colors.grey,
       }}>
       <Tab.Screen
         options={{
-          tabBarIcon: ({ focused }) => (focused ? <ConvertIcon fill={colors.blue} /> : <ConvertIcon />),
+          tabBarIcon: ({ color }) => <ConvertIcon fill={color} />,
         }}
         name="Locations"
-        component={LocationsScreen}
+        component={StackNavigator}
       />
       <Tab.Screen
         options={{
-          tabBarIcon: ({ focused }) =>
-            focused ? <HistoryIcon fill={colors.blue} stroke={colors.blue} /> : <HistoryIcon />,
+          tabBarIcon: ({ color }) => <HistoryIcon fill={color} stroke={color} />,
         }}
         name="History"
         component={HistoryScreen}
       />
       <Tab.Screen
         options={{
-          tabBarIcon: ({ focused }) => (focused ? <SettingsIcon stroke={colors.blue} /> : <SettingsIcon />),
+          tabBarIcon: ({ color }) => <SettingsIcon stroke={color} />,
         }}
         name="Settings"
         component={SettingsScreen}

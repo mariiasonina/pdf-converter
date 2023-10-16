@@ -16,11 +16,13 @@ export const sourceItems = [
     ),
     name: 'FileName.jpg',
     withArrow: true,
+    onPress: () => {},
   },
   {
     key: 1,
     icon: <AddFolderIcon />,
     name: 'add more images',
     withArrow: true,
+    onPress: () => {},
   },
 ];

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
-import ConvertSettingsItem from '@src/components/ConvertSettingsItem/ConvertSettingsItem';
+import SettingsItem from '@src/components/SettingsItem/SettingsItem';
 import ContentItemsContainer from '@src/components/ContentItemsContainer/ContentItemsContainer';
 import { sourceItems } from './constants';
 import { styles } from './styles';
@@ -10,9 +10,9 @@ const ConvertScreen = () => {
     <View style={styles.container}>
       <ScrollView style={styles.itemsContainer}>
         <ContentItemsContainer labelText="Original File" content={sourceItems} />
-        <ConvertSettingsItem label="Convert to" name=".pdf" />
-        <ConvertSettingsItem label="PDF Settings" name="Quality: 90%, Margins: None" withArrow />
-        <ConvertSettingsItem label="Name" name="FileName" />
+        <SettingsItem label="Convert to" name=".pdf" onPress={() => {}} />
+        <SettingsItem label="PDF Settings" name="Quality: 90%, Margins: None" withArrow onPress={() => {}} />
+        <SettingsItem label="Name" name="FileName" onPress={() => {}} />
       </ScrollView>
       <TouchableOpacity style={styles.button} activeOpacity={0.8}>
         <Text style={styles.buttonText}>Convert</Text>

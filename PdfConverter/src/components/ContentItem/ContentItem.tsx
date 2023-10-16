@@ -5,14 +5,15 @@ import { styles } from './styles';
 
 type Props = {
   name: string;
+  onPress: () => void;
   icon?: React.ReactElement;
   withArrow?: boolean;
   paddingHorizontal?: number;
 };
 
-const ContentItem = ({ icon, withArrow, name, paddingHorizontal }: Props) => {
+const ContentItem = ({ icon, withArrow, name, paddingHorizontal, onPress }: Props) => {
   return (
-    <TouchableOpacity style={[styles.item, { paddingHorizontal }]} activeOpacity={0.8}>
+    <TouchableOpacity style={[styles.item, { paddingHorizontal }]} activeOpacity={0.8} onPress={onPress}>
       {icon}
       <Text style={styles.text}>{name}</Text>
       {withArrow && <ForwardArrowIcon />}

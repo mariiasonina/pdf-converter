@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.red,
     borderRadius: 7.5,
     padding: 16,
-    marginTop: 30,
+    marginTop: 24,
   },
   button: {
     backgroundColor: colors.white,

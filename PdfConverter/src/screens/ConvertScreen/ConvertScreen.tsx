@@ -9,7 +9,7 @@ import { styles } from './styles';
 const ConvertScreen = () => {
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.itemsContainer}>
+      <ScrollView>
         <ContentItemsContainer labelText="Original File" content={sourceItems} />
         <SettingsItem label="Convert to" name=".pdf" onPress={() => {}} />
         <SettingsItem label="PDF Settings" name="Quality: 90%, Margins: None" withArrow onPress={() => {}} />

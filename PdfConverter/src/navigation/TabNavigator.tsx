@@ -2,10 +2,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ConvertIcon from '@assets/icons/tabConvertIcon.svg';
 import HistoryIcon from '@assets/icons/tabHistoryIcon.svg';
 import SettingsIcon from '@assets/icons/tabSettingsIcon.svg';
-import HistoryScreen from '@screens/HistoryScreen/HistoryScreen';
-import SettingsScreen from '@screens/SettingsScreen/SettingsScreen';
 import { colors } from '@src/global/colors';
-import StackNavigator from './StackNavigator';
+import { LocationsStack, HistoryStack, SettingsStack } from './StackNavigator';
 import { styles } from './styles';
 
 export type TabParamList = {
@@ -32,21 +30,21 @@ const TabNavigator = () => {
           tabBarIcon: ({ color }) => <ConvertIcon fill={color} />,
         }}
         name="Locations"
-        component={StackNavigator}
+        component={LocationsStack}
       />
       <Tab.Screen
         options={{
           tabBarIcon: ({ color }) => <HistoryIcon fill={color} stroke={color} />,
         }}
         name="History"
-        component={HistoryScreen}
+        component={HistoryStack}
       />
       <Tab.Screen
         options={{
           tabBarIcon: ({ color }) => <SettingsIcon stroke={color} />,
         }}
         name="Settings"
-        component={SettingsScreen}
+        component={SettingsStack}
       />
     </Tab.Navigator>
   );

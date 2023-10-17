@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text } from 'react-native';
 import { sharedStyles } from '@src/global/sharedStyles';
 import { NavigationProp, RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '@src/navigation/StackNavigator';
-import CloseIcon from '@assets/icons/closeIcon.svg';
+import CloseButton from "@src/components/CloseButton/CloseButton";
 import FileActionList from '@src/components/FileActionList/FileActionList';
 import { styles } from './styles';
 
@@ -33,9 +33,7 @@ const FileSettingsScreen = ({ route, navigation }: Props) => {
             <Text style={styles.text}>{date}</Text>
           </View>
         </View>
-        <Pressable onPress={onPressClose} style={styles.closeButton}>
-          <CloseIcon />
-        </Pressable>
+        <CloseButton />
       </View>
       <FileActionList />
     </View>

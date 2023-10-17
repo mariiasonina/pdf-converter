@@ -36,9 +36,4 @@ export const styles = StyleSheet.create({
     fontFamily: 'Poppins',
     textTransform: 'capitalize',
   },
-  closeButton: {
-    padding: 9,
-    backgroundColor: `rgba(127, 127, 127, 0.40)`,
-    borderRadius: 15,
-  },
 });

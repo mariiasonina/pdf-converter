@@ -49,7 +49,7 @@ const StackNavigator = () => {
           headerShown: false,
         }}>
         <Stack.Screen name="FileSettings" component={FileSettingsScreen} />
-        <Stack.Screen name="Subscribe" component={SubscribeScreen} />
+        <Stack.Screen options={{ presentation: 'fullScreenModal' }} name="Subscribe" component={SubscribeScreen} />
       </Stack.Group>
     </Stack.Navigator>
   );

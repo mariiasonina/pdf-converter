@@ -9,6 +9,7 @@ import LocationsScreen from '@src/screens/LocationsScreen/LocationsScreen';
 // import { useAppData } from '@src/context/AppContext';
 import HistoryScreen from '@src/screens/HistoryScreen/HistoryScreen';
 import SettingsScreen from '@src/screens/SettingsScreen/SettingsScreen';
+import SignatureScreen from '@src/screens/SignatureScreen/SignatureScreen';
 import { styles } from './styles';
 
 export type RootStackParamList = {
@@ -18,6 +19,7 @@ export type RootStackParamList = {
   Subscribe: undefined;
   Convert: undefined;
   FileSettings: { name: string; type: string; date: string };
+  Signature: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -31,6 +33,7 @@ export const LocationsStack = () => {
           headerLeft: () => <IconButton onPress={navigation.goBack} icon={<ArrowBackIcon />} />,
           headerTitleStyle: styles.stackHeaderTitleStyle,
           headerShown: route.name !== 'LocationsStack',
+          orientation: 'portrait',
         })}>
         <Stack.Screen name="LocationsStack" component={LocationsScreen} />
         <Stack.Screen
@@ -54,7 +57,7 @@ export const LocationsStack = () => {
 
 export const HistoryStack = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator screenOptions={{ headerShown: false, orientation: 'portrait' }}>
       <Stack.Screen name="HistoryStack" component={HistoryScreen} />
       <Stack.Screen
         options={{
@@ -70,7 +73,7 @@ export const HistoryStack = () => {
 
 export const SettingsStack = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator screenOptions={{ headerShown: false, orientation: 'portrait' }}>
       <Stack.Screen name="SettingsStack" component={SettingsScreen} />
       <Stack.Screen
         options={{
@@ -79,6 +82,11 @@ export const SettingsStack = () => {
         }}
         name="Subscribe"
         component={SubscribeScreen}
+      />
+      <Stack.Screen
+        options={{ presentation: 'fullScreenModal', orientation: 'landscape' }}
+        name="Signature"
+        component={SignatureScreen}
       />
     </Stack.Navigator>
   );

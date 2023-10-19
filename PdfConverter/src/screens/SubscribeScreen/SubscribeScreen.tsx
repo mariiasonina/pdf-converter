@@ -24,10 +24,9 @@ const SubscribeScreen = () => {
             </Pressable>
           </View>
           <View style={styles.header}>
-            <LetterU />
-            <Text style={styles.titleText}>nlimited</Text>
-            <LetterA />
-            <Text style={styles.titleText}>ccess</Text>
+            <Text style={styles.titleText}>
+              <LetterU />nlimited <LetterA />ccess
+            </Text>
           </View>
           <View style={styles.itemsContainer}>
             {subscribeItems.map(item => (

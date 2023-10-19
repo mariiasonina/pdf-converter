@@ -6,7 +6,9 @@ export const colors = {
   grey: '#B0B0B0',
   lightGrey: '#F5F5F5',
   darkGrey: '#7F7F7F',
+  graphite: '#78788052',
   yellow: '#FFD3A5',
   red: '#FF6D30',
   vanilla: '#FFF3B0',
+  salmon: '#FF575F',
 };

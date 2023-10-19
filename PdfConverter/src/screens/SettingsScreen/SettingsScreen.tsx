@@ -18,6 +18,11 @@ const SettingsScreen = ({ navigation }: Props) => {
   const onPressTryItOut = () => {
     navigation.navigate('Subscribe');
   };
+
+  const onPressAddSignature = () => {
+    navigation.navigate('Signature');
+  };
+
   return (
     <MainContainer firstHeaderLetter={<LetterS />} headerText="ettings" padding>
       <View style={styles.upgradeBlock}>
@@ -29,7 +34,13 @@ const SettingsScreen = ({ navigation }: Props) => {
           <Text style={styles.buttonText}>Try it out</Text>
         </TouchableOpacity>
       </View>
-      <SettingsItem label="Settings" name="Signature" icon={<SignatureIcon />} withArrow onPress={() => {}} />
+      <SettingsItem
+        label="Settings"
+        name="Signature"
+        icon={<SignatureIcon />}
+        withArrow
+        onPress={onPressAddSignature}
+      />
       <ContentItemsContainer labelText="About" content={aboutItems} />
     </MainContainer>
   );

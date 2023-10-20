@@ -7,6 +7,8 @@ import OtherAppIcon from '@assets/icons/otherAppIcon.svg';
 import { colors } from '@src/global/colors';
 import { NavigationProp } from '@react-navigation/native';
 import { RootStackParamList } from '@src/navigation/StackNavigator';
+import { pickCameraPicture, pickLibraryPicture } from '@src/utils/selectPicture';
+import { selectFile } from "@src/utils/selectFile";
 
 export const locationItems = (navigation: NavigationProp<RootStackParamList>) => [
   {
@@ -14,12 +16,31 @@ export const locationItems = (navigation: NavigationProp<RootStackParamList>) =>
     icon: <GalleryIcon />,
     name: 'gallery',
     color: colors.white,
-    onPress: () => {
-      navigation.navigate('Convert');
+    onPress: async () => {
+      const result = await pickLibraryPicture();
+      console.log(result);
     },
   },
-  { key: 1, icon: <FilesIcon />, name: 'files', color: colors.blue, onPress: () => {} },
-  { key: 2, icon: <CameraIcon />, name: 'camera', color: colors.red, onPress: () => {} },
+  {
+    key: 1,
+    icon: <FilesIcon />,
+    name: 'files',
+    color: colors.blue,
+    onPress: async () => {
+      const result = await selectFile();
+      console.log(result);
+    },
+  },
+  {
+    key: 2,
+    icon: <CameraIcon />,
+    name: 'camera',
+    color: colors.red,
+    onPress: async () => {
+      const result = await pickCameraPicture();
+      console.log(result);
+    },
+  },
   {
     key: 3,
     icon: <LinkIcon />,

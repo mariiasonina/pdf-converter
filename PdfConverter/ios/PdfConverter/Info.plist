@@ -58,5 +58,9 @@
 		<string>Poppins Bold.ttf</string>
 		<string>Poppins Regular.ttf</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app requires access to the photo library to take photos to be converted to different file formats</string>
+	<key>NSCameraUsageDescription</key>
+	<string>This app requires access to the camera to take photos to be converted to different file formats</string>
 </dict>
 </plist>

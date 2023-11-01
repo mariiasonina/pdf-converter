@@ -8,4 +8,10 @@ export const sharedStyles = StyleSheet.create({
     borderRadius: 1.5,
     backgroundColor: colors.grey,
   },
+  sourceImage: {
+    minWidth: 24,
+    minHeight: 24,
+    maxHeight: 40,
+    maxWidth: 40,
+  },
 });

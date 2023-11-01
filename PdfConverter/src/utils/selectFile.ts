@@ -9,6 +9,8 @@ export const selectFile = async () => {
 
     return file;
   } catch (err) {
-    console.log('Pick file error:', err);
+    if (!DocumentPicker.isCancel(err)) {
+      console.log('Pick file error:', err);
+    }
   }
 };

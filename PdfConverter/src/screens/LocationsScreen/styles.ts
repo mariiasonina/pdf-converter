@@ -9,10 +9,4 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
   },
-  image: {
-    minWidth: 24,
-    minHeight: 24,
-    maxHeight: 40,
-    maxWidth: 40,
-  },
 });

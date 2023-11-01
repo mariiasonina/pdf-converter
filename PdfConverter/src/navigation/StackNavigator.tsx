@@ -10,6 +10,8 @@ import LocationsScreen from '@src/screens/LocationsScreen/LocationsScreen';
 import HistoryScreen from '@src/screens/HistoryScreen/HistoryScreen';
 import SettingsScreen from '@src/screens/SettingsScreen/SettingsScreen';
 import SignatureScreen from '@src/screens/SignatureScreen/SignatureScreen';
+import { RouteProp } from '@react-navigation/native';
+import { useAppData } from '@src/context/AppContext';
 import { styles } from './styles';
 
 export type RootStackParamList = {
@@ -25,12 +27,21 @@ export type RootStackParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export const LocationsStack = () => {
+  const { clearItems } = useAppData();
+  const goBack = (navigation: any, route: RouteProp<RootStackParamList, keyof RootStackParamList>) => {
+    navigation.goBack();
+
+    if (route.name === 'Convert') {
+      clearItems();
+    }
+  };
+
   return (
     <Stack.Navigator>
       <Stack.Group
         screenOptions={({ navigation, route }) => ({
           headerStyle: styles.stackHeader,
-          headerLeft: () => <IconButton onPress={navigation.goBack} icon={<ArrowBackIcon />} />,
+          headerLeft: () => <IconButton onPress={() => goBack(navigation, route)} icon={<ArrowBackIcon />} />,
           headerTitleStyle: styles.stackHeaderTitleStyle,
           headerShown: route.name !== 'LocationsStack',
           orientation: 'portrait',
@@ -59,14 +70,7 @@ export const HistoryStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false, orientation: 'portrait' }}>
       <Stack.Screen name="HistoryStack" component={HistoryScreen} />
-      <Stack.Screen
-        options={{
-          presentation: 'modal',
-          headerShown: false,
-        }}
-        name="FileSettings"
-        component={FileSettingsScreen}
-      />
+      <Stack.Screen options={{ presentation: 'modal' }} name="FileSettings" component={FileSettingsScreen} />
     </Stack.Navigator>
   );
 };

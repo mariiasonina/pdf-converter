@@ -17,5 +17,7 @@ export const styles = StyleSheet.create({
     fontWeight: '600',
     color: colors.blackSecondary,
     flexGrow: 1,
+    minWidth: '70%',
+    flexShrink: 1,
   },
 });

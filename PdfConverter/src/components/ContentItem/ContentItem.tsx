@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity } from 'react-native';
 import ForwardArrowIcon from '@assets/icons/forwardArrowIcon.svg';
 import { styles } from './styles';
 
@@ -15,7 +15,9 @@ const ContentItem = ({ icon, withArrow, name, paddingHorizontal, onPress }: Prop
   return (
     <TouchableOpacity style={[styles.item, { paddingHorizontal }]} activeOpacity={0.8} onPress={onPress}>
       {icon}
-      <Text style={styles.text}>{name}</Text>
+      <Text style={styles.text} numberOfLines={1} ellipsizeMode="tail">
+        {name}
+      </Text>
       {withArrow && <ForwardArrowIcon />}
     </TouchableOpacity>
   );

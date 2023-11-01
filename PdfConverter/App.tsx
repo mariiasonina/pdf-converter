@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, StatusBar, SafeAreaView, View } from 'react-native';
+import { StyleSheet, StatusBar, SafeAreaView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { colors } from '@src/global/colors';
-import TabNavigator from "@src/navigation/TabNavigator";
+import TabNavigator from '@src/navigation/TabNavigator';
+import AppProvider from '@src/context/AppProvider';
 
 const styles = StyleSheet.create({
   saveArea: {
@@ -14,10 +15,12 @@ const styles = StyleSheet.create({
 const App = () => {
   return (
     <SafeAreaView style={styles.saveArea}>
-      <NavigationContainer>
-        <TabNavigator />
-        <StatusBar barStyle="light-content" />
-      </NavigationContainer>
+      <AppProvider>
+        <NavigationContainer>
+          <TabNavigator />
+          <StatusBar barStyle="light-content" />
+        </NavigationContainer>
+      </AppProvider>
     </SafeAreaView>
   );
 };

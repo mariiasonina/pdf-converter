@@ -3,33 +3,36 @@ import PrivacyIcon from '@assets/icons/privacyIcon.svg';
 import HelpIcon from '@assets/icons/helpIcon.svg';
 import ShareIcon from '@assets/icons/settingsShareIcon.svg';
 
-export const aboutItems = [
+export type AboutItemsType = {
+  id: number;
+  icon: React.ReactElement;
+  name: string;
+  onPress: () => void;
+}[];
+
+export const aboutItems: AboutItemsType = [
   {
-    key: 0,
+    id: 0,
     icon: <TermsIcon />,
     name: 'Terms of Use',
-    withArrow: true,
     onPress: () => {},
   },
   {
-    key: 1,
+    id: 1,
     icon: <PrivacyIcon />,
     name: 'Privacy Policy',
-    withArrow: true,
     onPress: () => {},
   },
   {
-    key: 2,
+    id: 2,
     icon: <HelpIcon />,
     name: 'FAQ and Support',
-    withArrow: true,
     onPress: () => {},
   },
   {
-    key: 3,
+    id: 3,
     icon: <ShareIcon />,
     name: 'Share',
-    withArrow: true,
     onPress: () => {},
   },
 ];

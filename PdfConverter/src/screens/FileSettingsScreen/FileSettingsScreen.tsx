@@ -1,23 +1,18 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { sharedStyles } from '@src/global/sharedStyles';
-import { NavigationProp, RouteProp } from '@react-navigation/native';
+import { RouteProp } from '@react-navigation/native';
 import { RootStackParamList } from '@src/navigation/StackNavigator';
 import CloseButton from "@src/components/CloseButton/CloseButton";
 import FileActionList from '@src/components/FileActionList/FileActionList';
 import { styles } from './styles';
 
 type Props = {
-  navigation: NavigationProp<RootStackParamList>;
   route: RouteProp<RootStackParamList, 'FileSettings'>;
 };
 
-const FileSettingsScreen = ({ route, navigation }: Props) => {
+const FileSettingsScreen = ({ route }: Props) => {
   const { name, type, date } = route.params;
-
-  const onPressClose = () => {
-    navigation.goBack();
-  };
 
   return (
     <View style={styles.container}>

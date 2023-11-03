@@ -10,7 +10,7 @@ export const convertImageToPDF = async (filesToConvert: FilesToConvertType, file
           <head>
           <style>
             img {
-              max-width: 99%;
+              max-width: 98%;
               height: auto;
               page-break-inside: avoid;
             }
@@ -30,7 +30,7 @@ export const convertImageToPDF = async (filesToConvert: FilesToConvertType, file
 
     const options = {
       html: htmlContent,
-      fileName: fileName,
+      fileName,
       directory: RNFS.DocumentDirectoryPath,
       padding,
     };
@@ -40,6 +40,41 @@ export const convertImageToPDF = async (filesToConvert: FilesToConvertType, file
     return pdf;
   } catch (error) {
     console.error('Error converting image to PDF:', error);
+    return null;
+  }
+};
+
+const readTextFromFile = async (filePath: string) => {
+  try {
+    const text = await RNFS.readFile(decodeURIComponent(filePath), 'utf8');
+
+    return text;
+  } catch (error) {
+    console.error('Error reading file:', error);
+    return null;
+  }
+};
+
+export const convertTextToPDF = async (filePath: string, fileName: string, padding = 10) => {
+  const text = await readTextFromFile(filePath);
+  console.log(filePath);
+
+  const htmlContent = `<html><body><p>${text?.replace(/\n/g, '<br>')}</p></body></html>`;
+
+  const options = {
+    html: htmlContent,
+    fileName,
+    directory: RNFS.DocumentDirectoryPath,
+    padding,
+  };
+
+  try {
+    const pdfFile = await RNHTMLtoPDF.convert(options);
+
+    return pdfFile;
+  } catch (error) {
+    console.error('Error converting to PDF:', error);
+
     return null;
   }
 };

@@ -11,7 +11,7 @@ import { useAppData } from '@src/context/AppContext';
 import { colors } from '@src/global/colors';
 import { NavigationProp } from '@react-navigation/native';
 import { RootStackParamList } from '@src/navigation/StackNavigator';
-import { convertImageToPDF } from '@src/utils/convertHelpers';
+import { convertImageToPDF, convertTextToPDF } from '@src/utils/convertHelpers';
 import { styles } from './styles';
 
 type Props = {
@@ -26,17 +26,23 @@ const ConvertScreen = ({ navigation }: Props) => {
   const insets = useSafeAreaInsets();
   const [fileName, setFileName] = useState(getFileNameWithoutExtension(filesToConvert[0].name));
   const isImageType = filesToConvert.some(image => image.type.includes('image'));
+  const isTextType = filesToConvert[0].type.includes('text');
 
   const onPressConvert = async () => {
     let padding;
-  
+    let convertedFile;
+
     if (pdfSettings.margin === 'Normal') {
       padding = 30;
     } else if (pdfSettings.margin === 'None') {
       padding = 0;
     }
 
-    const convertedFile = await convertImageToPDF(filesToConvert, fileName, padding);
+    if (isImageType) {
+      convertedFile = await convertImageToPDF(filesToConvert, fileName, padding);
+    } else if (isTextType) {
+      convertedFile = await convertTextToPDF(filesToConvert[0].uri, fileName, padding);
+    }
 
     if (convertedFile?.filePath) {
       navigation.navigate('PDFView', { uri: convertedFile.filePath });

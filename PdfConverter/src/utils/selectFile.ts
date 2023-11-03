@@ -13,6 +13,7 @@ export const selectFile = async () => {
         'public.plain-text',
         'com.microsoft.excel.xls',
         'org.openxmlformats.spreadsheetml.sheet',
+        'org.idpf.epub-container',
       ],
     });
 

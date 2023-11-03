@@ -65,6 +65,7 @@ export const LocationsStack = () => {
           name="PDFSettings"
           component={PDFSettingsScreen}
         />
+        <Stack.Screen name="PDFView" component={PDFViewScreen} />
       </Stack.Group>
       <Stack.Group
         screenOptions={{

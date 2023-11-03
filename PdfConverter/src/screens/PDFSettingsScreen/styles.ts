@@ -4,25 +4,8 @@ import { colors } from '@src/global/colors';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingHorizontal: 20,
     backgroundColor: colors.blackSecondary,
-    paddingBottom: 24,
-  },
-  inputContainer: {
-    paddingHorizontal: 16,
-    height: 48,
-    borderWidth: 1,
-    borderColor: colors.lightGrey,
-    borderRadius: 7.5,
-    marginBottom: 100,
-    gap: 10,
-  },
-  input: {
-    fontFamily: 'Manrope',
-    fontSize: 16,
-    fontWeight: '600',
-    color: colors.white,
-    flexGrow: 1,
-    flexShrink: 1,
   },
   label: {
     fontFamily: 'Manrope',
@@ -32,10 +15,20 @@ export const styles = StyleSheet.create({
     marginTop: 16,
     marginBottom: 8,
   },
-  scrollView: {
+  marginsContainer: {
+    marginVertical: 16,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     paddingHorizontal: 20,
   },
-  button: {
+  slider: {
     marginHorizontal: 20,
-  }
+    marginVertical: 16,
+  },
+  headerDoneButton: {
+    color: colors.lightGrey,
+    fontFamily: 'Manrope',
+    fontSize: 17,
+    fontWeight: '700',
+  },
 });

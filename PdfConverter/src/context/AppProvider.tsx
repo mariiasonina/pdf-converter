@@ -4,10 +4,14 @@ import React, { PropsWithChildren, Reducer, useMemo, useReducer } from 'react';
 //   saveDataToAsyncStorage,
 // } from "@src/utils/storageHelpers";
 import AppContext from './AppContext';
-import { ActionType, StateProps, SubscribeType, FileToConvert } from './types';
+import { ActionType, StateProps, SubscribeType, FileToConvert, MarginType } from './types';
 
 const initialState: StateProps = {
   filesToConvert: [],
+  pdfSettings: {
+    quality: 100,
+    margin: 'None',
+  },
   subscriptionType: 'week',
   hasUserSubscription: false,
 };
@@ -42,6 +46,22 @@ const reducer: Reducer<StateProps, ActionType> = (prevState, action) => {
         ...prevState,
         subscriptionType: action.subscriptionType,
       };
+    case 'CHANGE_MARGIN':
+      return {
+        ...prevState,
+        pdfSettings: {
+          ...prevState.pdfSettings,
+          margin: action.margin,
+        },
+      };
+    case 'CHANGE_QUALITY':
+      return {
+        ...prevState,
+        pdfSettings: {
+          ...prevState.pdfSettings,
+          quality: action.quality,
+        },
+      };
     default:
       return { ...prevState };
   }
@@ -64,11 +84,18 @@ const AppProvider = ({ children }: PropsWithChildren<{}>) => {
       changeSubscribeType: (subscriptionType: SubscribeType) => {
         dispatch({ type: 'CHANGE_SUBSCRIPTION_TYPE', subscriptionType });
       },
+      changePdfMargin: (margin: MarginType) => {
+        dispatch({ type: 'CHANGE_MARGIN', margin });
+      },
+      changePdfQuality: (quality: number) => {
+        dispatch({ type: 'CHANGE_QUALITY', quality });
+      },
       filesToConvert: state.filesToConvert,
+      pdfSettings: state.pdfSettings,
       subscriptionType: state.subscriptionType,
       hasUserSubscription: state.hasUserSubscription,
     }),
-    [state.filesToConvert, state.subscriptionType, state.hasUserSubscription],
+    [state.filesToConvert, state.subscriptionType, state.hasUserSubscription, state.pdfSettings],
   );
 
   return <AppContext.Provider value={appContext}>{children}</AppContext.Provider>;

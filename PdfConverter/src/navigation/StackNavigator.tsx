@@ -10,6 +10,8 @@ import LocationsScreen from '@src/screens/LocationsScreen/LocationsScreen';
 import HistoryScreen from '@src/screens/HistoryScreen/HistoryScreen';
 import SettingsScreen from '@src/screens/SettingsScreen/SettingsScreen';
 import SignatureScreen from '@src/screens/SignatureScreen/SignatureScreen';
+import PDFViewScreen from '@src/screens/PDFViewScreen/PDFViewScreen';
+import PDFSettingsScreen from '@src/screens/PDFSettingsScreen/PDFSettingsScreen';
 import { RouteProp } from '@react-navigation/native';
 import { useAppData } from '@src/context/AppContext';
 import { styles } from './styles';
@@ -22,6 +24,8 @@ export type RootStackParamList = {
   Convert: undefined;
   FileSettings: { name: string; type: string; date: string };
   Signature: undefined;
+  PDFView: { uri: string };
+  PDFSettings: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -54,6 +58,13 @@ export const LocationsStack = () => {
           name="Convert"
           component={ConvertScreen}
         />
+        <Stack.Screen
+          options={{
+            title: 'PDF Settings',
+          }}
+          name="PDFSettings"
+          component={PDFSettingsScreen}
+        />
       </Stack.Group>
       <Stack.Group
         screenOptions={{
@@ -70,6 +81,7 @@ export const HistoryStack = () => {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false, orientation: 'portrait' }}>
       <Stack.Screen name="HistoryStack" component={HistoryScreen} />
+      {/* <Stack.Screen name="PDFView" component={PDFViewScreen} /> */}
       <Stack.Screen options={{ presentation: 'modal' }} name="FileSettings" component={FileSettingsScreen} />
     </Stack.Navigator>
   );

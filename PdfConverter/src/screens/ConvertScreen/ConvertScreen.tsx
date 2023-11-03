@@ -9,28 +9,61 @@ import { getFileNameWithoutExtension } from '@src/utils/helpers';
 import { useScreenDimentions } from '@src/hooks/useDimentions';
 import { useAppData } from '@src/context/AppContext';
 import { colors } from '@src/global/colors';
+import { NavigationProp } from '@react-navigation/native';
+import { RootStackParamList } from '@src/navigation/StackNavigator';
+import { convertImageToPDF } from '@src/utils/convertHelpers';
 import { styles } from './styles';
 
-const ConvertScreen = () => {
+type Props = {
+  navigation: NavigationProp<RootStackParamList>;
+};
+
+const ConvertScreen = ({ navigation }: Props) => {
   const { height } = useScreenDimentions();
   const colorScheme = useColorScheme();
-  const { filesToConvert } = useAppData();
+  const { filesToConvert, pdfSettings } = useAppData();
   const headerHeight = useHeaderHeight();
   const insets = useSafeAreaInsets();
   const [fileName, setFileName] = useState(getFileNameWithoutExtension(filesToConvert[0].name));
   const isImageType = filesToConvert.some(image => image.type.includes('image'));
-  const inputAccessoryViewID = 'uniqueID';
+
+  const onPressConvert = async () => {
+    let padding;
+  
+    if (pdfSettings.margin === 'Normal') {
+      padding = 30;
+    } else if (pdfSettings.margin === 'None') {
+      padding = 0;
+    }
+
+    const convertedFile = await convertImageToPDF(filesToConvert, fileName, padding);
+
+    if (convertedFile?.filePath) {
+      navigation.navigate('PDFView', { uri: convertedFile.filePath });
+    }
+    console.log(convertedFile);
+  };
+
+  const goToPdfSettings = () => {
+    navigation.navigate('PDFSettings');
+  };
 
   return (
     <View style={styles.container}>
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-        keyboardVerticalOffset={headerHeight}>
+        // keyboardVerticalOffset={headerHeight + 100}
+      >
         <ScrollView style={styles.scrollView}>
           <ContentItemsContainer labelText="Original File" content={filesToConvert} isImageType={isImageType} />
           <SettingsItem label="Convert to" name=".pdf" onPress={() => {}} withArrow={!isImageType} />
-          <SettingsItem label="PDF Settings" name="Quality: 90%, Margins: None" withArrow onPress={() => {}} />
+          <SettingsItem
+            label="PDF Settings"
+            name={`Quality: ${pdfSettings.quality}%, Margins: ${pdfSettings.margin}`}
+            withArrow
+            onPress={goToPdfSettings}
+          />
           <Text style={styles.label}>Name</Text>
           <View style={[styles.inputContainer, colorScheme === 'light' && { backgroundColor: colors.lightGrey }]}>
             <TextInput
@@ -39,12 +72,11 @@ const ConvertScreen = () => {
               value={fileName}
               onChangeText={setFileName}
               clearButtonMode="while-editing"
-              inputAccessoryViewID={inputAccessoryViewID}
             />
           </View>
         </ScrollView>
       </KeyboardAvoidingView>
-      <Button buttonText="convert" onPress={() => {}} buttonStyle={styles.button} />
+      <Button buttonText="convert" onPress={onPressConvert} buttonStyle={styles.button} />
     </View>
   );
 };

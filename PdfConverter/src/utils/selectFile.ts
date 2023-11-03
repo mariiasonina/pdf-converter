@@ -4,7 +4,16 @@ export const selectFile = async () => {
   try {
     const file = await DocumentPicker.pickSingle({
       presentationStyle: 'formSheet',
-      // type: ['images', 'pdf', 'doc', 'docx'],
+      type: [
+        'public.comma-separated-values-text',
+        'com.microsoft.word.doc',
+        'org.openxmlformats.wordprocessingml.document',
+        'public.image',
+        'com.adobe.pdf',
+        'public.plain-text',
+        'com.microsoft.excel.xls',
+        'org.openxmlformats.spreadsheetml.sheet',
+      ],
     });
 
     return file;

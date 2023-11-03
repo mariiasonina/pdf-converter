@@ -22,6 +22,7 @@ export const usePickFiles = (navigation: NavigationProp<RootStackParamList>) => 
         name: fileName,
         type,
         icon: <Image style={sharedStyles.sourceImage} source={{ uri }} />,
+        uri,
       });
       navigation.navigate('Convert');
     }

@@ -1,0 +1,9 @@
+<svg width="51" height="70" viewBox="0 0 51 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Narrow">
+<rect id="Rectangle 3" x="0.5" width="50" height="70" fill="#B0B0B0"/>
+<g id="MarginNarrow">
+<path d="M4.5 4.04V66H46.5V4.46L4.5 4.04Z" fill="white"/>
+<path d="M4.5 0V4.04M4.5 70V66M46.5 0V4.46M46.5 70V66M0.5 4L4.5 4.04M50.5 4.5L46.5 4.46M0.5 66H4.5M50.5 66H46.5M4.5 4.04V66M4.5 4.04L46.5 4.46M4.5 66H46.5M46.5 66V4.46" stroke="#3276F7" stroke-width="1.5"/>
+</g>
+</g>
+</svg>

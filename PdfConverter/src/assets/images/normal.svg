@@ -1,0 +1,9 @@
+<svg width="51" height="70" viewBox="0 0 51 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Normal">
+<rect id="Rectangle 2" x="0.5" width="50" height="70" fill="#B0B0B0"/>
+<g id="MarginsNormal">
+<path d="M8.5 8.08V62H42.5V8.42L8.5 8.08Z" fill="white"/>
+<path d="M8.5 0V8.08M8.5 70V62M42.5 0V8.42M42.5 70V62M0.5 8L8.5 8.08M50.5 8.5L42.5 8.42M0.5 62H8.5M50.5 62H42.5M8.5 8.08V62M8.5 8.08L42.5 8.42M8.5 62H42.5M42.5 62V8.42" stroke="#3276F7" stroke-width="1.5"/>
+</g>
+</g>
+</svg>

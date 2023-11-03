@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, View, Text } from 'react-native';
-import TickIcon from '@assets/icons/tickIcon.svg';
+import TickIcon from '@assets/icons/tickIconBlack.svg';
 // import { useAppData } from "@src/context/AppContext";
 import { SubscribeType } from '@src/context/types';
 import { styles } from './styles';
